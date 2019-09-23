@@ -29,14 +29,9 @@ column1 = dbc.Col(
         dcc.Markdown(
             """
         
-            ## Value Proposition
+            ## How well can the outcome of a Pokémon battle be predicted?
 
-            Emphasize how the app will benefit users. Don't emphasize the underlying technology.
-
-            ✅ RUN is a running app that adapts to your fitness levels and designs personalized workouts to help you improve your running.
-
-            ❌ RUN is the only intelligent running app that uses sophisticated deep neural net machine learning to make your run smarter because we believe in ML driven workouts.
-
+            This application allows one to interactively compare how well one team of Pokémon performs against another. This may provide some guidance in team building, and the techniques used to create the model used in this app can be applied to similar games, such as card games.
             """
         ),
         dcc.Link(dbc.Button('Call To Action', color='primary'), href='/predictions')
