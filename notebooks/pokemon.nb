@@ -1,0 +1,1113 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     47991,       1105]
+NotebookOptionsPosition[     46224,       1070]
+NotebookOutlinePosition[     46568,       1085]
+CellTagsIndexPosition[     46525,       1082]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{"SetDirectory", "[", "\"\<pokemon\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.7780839604828405`*^9, 3.778083966865381*^9}},
+ CellLabel->"In[3]:=",ExpressionUUID->"1168dad6-9720-462c-8e4f-4e29180d8cf5"],
+
+Cell[BoxData["\<\"C:\\\\Users\\\\soobt\\\\Documents\\\\pokemon\"\>"], "Output",
+ CellChangeTimes->{3.7780839672951765`*^9},
+ CellLabel->"Out[3]=",ExpressionUUID->"5159f33f-5fee-4c7e-b533-a0ca27ba8a5d"]
+}, Open  ]],
+
+Cell[BoxData[{
+ RowBox[{"Typetable", "=", 
+  RowBox[{"Prepend", "[", 
+   RowBox[{
+    RowBox[{"Partition", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+       "Normal", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "0.5",
+         ",", "1", ",", "0", ",", "0.5", ",", "1", ",", "1", ",", "1", ",", 
+        "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", 
+        "Fighting", ",", "2", ",", "1", ",", "0.5", ",", "0.5", ",", "1", ",",
+         "2", ",", "0.5", ",", "0", ",", "2", ",", "1", ",", "1", ",", "1", 
+        ",", "1", ",", "0.5", ",", "2", ",", "1", ",", "2", ",", "0.5", ",", 
+        "Flying", ",", "1", ",", "2", ",", "1", ",", "1", ",", "1", ",", 
+        "0.5", ",", "2", ",", "1", ",", "0.5", ",", "1", ",", "1", ",", "2", 
+        ",", "0.5", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", 
+        "Poison", ",", "1", ",", "1", ",", "1", ",", "0.5", ",", "0.5", ",", 
+        "0.5", ",", "1", ",", "0.5", ",", "0", ",", "1", ",", "1", ",", "2", 
+        ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "2", ",", 
+        "Ground", ",", "1", ",", "1", ",", "0", ",", "2", ",", "1", ",", "2", 
+        ",", "0.5", ",", "1", ",", "2", ",", "2", ",", "1", ",", "0.5", ",", 
+        "2", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "Rock", 
+        ",", "1", ",", "0.5", ",", "2", ",", "1", ",", "0.5", ",", "1", ",", 
+        "2", ",", "1", ",", "0.5", ",", "2", ",", "1", ",", "1", ",", "1", 
+        ",", "1", ",", "2", ",", "1", ",", "1", ",", "1", ",", "Bug", ",", 
+        "1", ",", "0.5", ",", "0.5", ",", "0.5", ",", "1", ",", "1", ",", "1",
+         ",", "0.5", ",", "0.5", ",", "0.5", ",", "1", ",", "2", ",", "1", 
+        ",", "2", ",", "1", ",", "1", ",", "2", ",", "0.5", ",", "Ghost", ",",
+         "0", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",",
+         "2", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "2", ",",
+         "1", ",", "1", ",", "0.5", ",", "1", ",", "Steel", ",", "1", ",", 
+        "1", ",", "1", ",", "1", ",", "1", ",", "2", ",", "1", ",", "1", ",", 
+        "0.5", ",", "0.5", ",", "0.5", ",", "1", ",", "0.5", ",", "1", ",", 
+        "2", ",", "1", ",", "1", ",", "2", ",", "Fire", ",", "1", ",", "1", 
+        ",", "1", ",", "1", ",", "1", ",", "0.5", ",", "2", ",", "1", ",", 
+        "2", ",", "0.5", ",", "0.5", ",", "2", ",", "1", ",", "1", ",", "2", 
+        ",", "0.5", ",", "1", ",", "1", ",", "Water", ",", "1", ",", "1", ",",
+         "1", ",", "1", ",", "2", ",", "2", ",", "1", ",", "1", ",", "1", ",",
+         "2", ",", "0.5", ",", "0.5", ",", "1", ",", "1", ",", "1", ",", 
+        "0.5", ",", "1", ",", "1", ",", "Grass", ",", "1", ",", "1", ",", 
+        "0.5", ",", "0.5", ",", "2", ",", "2", ",", "0.5", ",", "1", ",", 
+        "0.5", ",", "0.5", ",", "2", ",", "0.5", ",", "1", ",", "1", ",", "1",
+         ",", "0.5", ",", "1", ",", "1", ",", "Electric", ",", "1", ",", "1", 
+        ",", "2", ",", "1", ",", "0", ",", "1", ",", "1", ",", "1", ",", "1", 
+        ",", "1", ",", "2", ",", "0.5", ",", "0.5", ",", "1", ",", "1", ",", 
+        "0.5", ",", "1", ",", "1", ",", "Psychic", ",", "1", ",", "2", ",", 
+        "1", ",", "2", ",", "1", ",", "1", ",", "1", ",", "1", ",", "0.5", 
+        ",", "1", ",", "1", ",", "1", ",", "1", ",", "0.5", ",", "1", ",", 
+        "1", ",", "0", ",", "1", ",", "Ice", ",", "1", ",", "1", ",", "2", 
+        ",", "1", ",", "2", ",", "1", ",", "1", ",", "1", ",", "0.5", ",", 
+        "0.5", ",", "0.5", ",", "2", ",", "1", ",", "1", ",", "0.5", ",", "2",
+         ",", "1", ",", "1", ",", "Dragon", ",", "1", ",", "1", ",", "1", ",",
+         "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "0.5", ",", "1", 
+        ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "2", ",", "1", 
+        ",", "0", ",", "Dark", ",", "1", ",", "0.5", ",", "1", ",", "1", ",", 
+        "1", ",", "1", ",", "1", ",", "2", ",", "1", ",", "1", ",", "1", ",", 
+        "1", ",", "1", ",", "2", ",", "1", ",", "1", ",", "0.5", ",", "0.5", 
+        ",", "Fairy", ",", "1", ",", "2", ",", "1", ",", "0.5", ",", "1", ",",
+         "1", ",", "1", ",", "1", ",", "0.5", ",", "0.5", ",", "1", ",", "1", 
+        ",", "1", ",", "1", ",", "1", ",", "2", ",", "2", ",", "1"}], "}"}], 
+      ",", "19"}], "]"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"{", 
+     RowBox[{
+     "\"\<\[Cross]\>\"", ",", "Normal", ",", "Fighting", ",", "Flying", ",", 
+      "Poison", ",", "Ground", ",", "Rock", ",", "Bug", ",", "Ghost", ",", 
+      "Steel", ",", "Fire", ",", "Water", ",", "Grass", ",", "Electric", ",", 
+      "Psychic", ",", "Ice", ",", "Dragon", ",", "Dark", ",", "Fairy"}], 
+     "}"}]}], "\[IndentingNewLine]", "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"GetDefense", "[", "\"\<None\>\"", "]"}], ":=", 
+  RowBox[{"{", 
+   RowBox[{
+   "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", 
+    ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",",
+     "1", ",", "1", ",", "1"}], "}"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"GetDefense", "[", "x_", "]"}], ":=", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Transpose", "[", "Typetable", "]"}], "[", 
+    RowBox[{"[", 
+     RowBox[{
+      RowBox[{"Position", "[", 
+       RowBox[{
+        RowBox[{"ToString", "/@", 
+         RowBox[{"Typetable", "[", 
+          RowBox[{"[", "1", "]"}], "]"}]}], ",", "x"}], "]"}], "[", 
+      RowBox[{"[", 
+       RowBox[{"1", ",", "1"}], "]"}], "]"}], "]"}], "]"}], "[", 
+   RowBox[{"[", 
+    RowBox[{"2", ";;", "All"}], "]"}], "]"}]}]}], "Input",ExpressionUUID->\
+"7fde938a-8771-4c4b-a42e-7cc7302a8809"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"pokeData", "=", 
+   RowBox[{"Import", "[", "\"\<smogon.csv\>\"", "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"statass", "=", 
+   RowBox[{"Association", "[", 
+    RowBox[{"Thread", "@", 
+     RowBox[{"Rule", "[", 
+      RowBox[{
+       RowBox[{"pokeData", "[", 
+        RowBox[{"[", 
+         RowBox[{
+          RowBox[{"2", ";;", "All"}], ",", "1"}], "]"}], "]"}], ",", 
+       RowBox[{"pokeData", "[", 
+        RowBox[{"[", 
+         RowBox[{
+          RowBox[{"2", ";;", "All"}], ",", 
+          RowBox[{"2", ";;", "All"}]}], "]"}], "]"}]}], "]"}]}], "]"}]}], 
+  ";"}]}], "Input",
+ CellChangeTimes->{{3.778083931152908*^9, 3.778083932235602*^9}},
+ CellLabel->"In[4]:=",ExpressionUUID->"93c64f4e-c0b8-4c74-91d3-50a4442cd591"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"dataOUTrain", "=", 
+   RowBox[{"Import", "[", "\"\<train_ou.txt\>\"", "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"dataOUTest", "=", 
+   RowBox[{"Import", "[", "\"\<test_ou.txt\>\"", "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"dataVGCTrain", "=", 
+   RowBox[{"Import", "[", "\"\<train_vgcSun.txt\>\"", "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"dataVGCTest", "=", 
+    RowBox[{"Import", "[", "\"\<test_vgcSun.txt\>\"", "]"}]}], ";"}], 
+  "\[IndentingNewLine]", "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{
+    "Proccess", " ", "text", " ", "into", " ", "a", " ", "csv", " ", "file"}],
+     ",", " ", 
+    RowBox[{"and", " ", "replace", " ", "pokemon", " ", "so", " ", 
+     RowBox[{"it", "'"}], "s", " ", "compatible", " ", "with", " ", 
+     RowBox[{"smogon", ".", "csv"}]}]}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"dataOUTrain", "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"StringSplit", "[", 
+      RowBox[{"#", ",", "\"\<,\>\""}], "]"}], "&"}], "/@", 
+    RowBox[{"StringJoin", "@@@", 
+     RowBox[{
+      RowBox[{"Partition", "[", 
+       RowBox[{
+        RowBox[{"StringSplit", "[", 
+         RowBox[{"dataOUTrain", ",", "\"\<\\n\>\""}], "]"}], ",", "4"}], 
+       "]"}], "[", 
+      RowBox[{"[", 
+       RowBox[{"All", ",", 
+        RowBox[{"2", ";;", "All"}]}], "]"}], "]"}]}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"dataOUTest", "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"StringSplit", "[", 
+      RowBox[{"#", ",", "\"\<,\>\""}], "]"}], "&"}], "/@", 
+    RowBox[{"StringJoin", "@@@", 
+     RowBox[{
+      RowBox[{"Partition", "[", 
+       RowBox[{
+        RowBox[{"StringSplit", "[", 
+         RowBox[{"dataOUTest", ",", "\"\<\\n\>\""}], "]"}], ",", "4"}], "]"}],
+       "[", 
+      RowBox[{"[", 
+       RowBox[{"All", ",", 
+        RowBox[{"2", ";;", "All"}]}], "]"}], "]"}]}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"dataOU", "=", 
+   RowBox[{
+    RowBox[{"Join", "[", 
+     RowBox[{"dataOUTrain", ",", "dataOUTest"}], "]"}], "/.", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{
+      "\"\<Basculin-Blue-Striped\>\"", "\[Rule]", "\"\<Basculin\>\""}], ",", 
+      RowBox[{"\"\<Florges-Blue\>\"", "\[Rule]", "\"\<Florges\>\""}], ",", 
+      RowBox[{"\"\<Florges-Orange\>\"", "\[Rule]", "\"\<Florges\>\""}], ",", 
+      RowBox[{"\"\<Florges-White\>\"", "\[Rule]", "\"\<Florges\>\""}], ",", 
+      RowBox[{"\"\<Florges-Yellow\>\"", "\[Rule]", "\"\<Florges\>\""}], ",", 
+      RowBox[{"\"\<Furfrou-Dandy\>\"", "\[Rule]", "\"\<Furfrou\>\""}], ",", 
+      RowBox[{"\"\<Gastrodon-East\>\"", "\[Rule]", "\"\<Gastrodon\>\""}], ",", 
+      RowBox[{"\"\<Gourgeist-*\>\"", "\[Rule]", "\"\<Gourgeist\>\""}], ",", 
+      RowBox[{"\"\<Keldeo-Resolute\>\"", "\[Rule]", "\"\<Keldeo\>\""}], ",", 
+      RowBox[{"\"\<Kommo-o-Totem\>\"", "\[Rule]", "\"\<Kommo-o\>\""}], ",", 
+      RowBox[{
+      "\"\<Marowak-Alola-Totem\>\"", "\[Rule]", "\"\<Marowak-Alola\>\""}], 
+      ",", 
+      RowBox[{"\"\<Meowstic\>\"", "\[Rule]", "\"\<Meowstic-M\>\""}], ",", 
+      RowBox[{"\"\<Mimikyu-Totem\>\"", "\[Rule]", "\"\<Mimikyu\>\""}], ",", 
+      RowBox[{"\"\<Minior-Blue\>\"", "\[Rule]", "\"\<Minior\>\""}], ",", 
+      RowBox[{"\"\<Minior-Green\>\"", "\[Rule]", "\"\<Minior\>\""}], ",", 
+      RowBox[{"\"\<Minior-Orange\>\"", "\[Rule]", "\"\<Minior\>\""}], ",", 
+      RowBox[{"\"\<Minior-Yellow\>\"", "\[Rule]", "\"\<Minior\>\""}], ",", 
+      RowBox[{"\"\<Pikachu-Kalos\>\"", "\[Rule]", "\"\<Pikachu\>\""}], ",", 
+      RowBox[{"\"\<Pikachu-Original\>\"", "\[Rule]", "\"\<Pikachu\>\""}], ",", 
+      RowBox[{"\"\<Pikachu-Partner\>\"", "\[Rule]", "\"\<Pikachu\>\""}], ",", 
+      RowBox[{"\"\<Pikachu-Sinnoh\>\"", "\[Rule]", "\"\<Pikachu\>\""}], ",", 
+      RowBox[{"\"\<Pikachu-Unova\>\"", "\[Rule]", "\"\<Pikachu\>\""}], ",", 
+      RowBox[{"\"\<Salazzle-Totem\>\"", "\[Rule]", "\"\<Salazzle\>\""}], ",", 
+      RowBox[{"\"\<Sawsbuck-Autumn\>\"", "\[Rule]", "\"\<Sawsbuck\>\""}], ",", 
+      RowBox[{"\"\<Sawsbuck-Summer\>\"", "\[Rule]", "\"\<Sawsbuck\>\""}], ",", 
+      RowBox[{"\"\<Sawsbuck-Winter\>\"", "\[Rule]", "\"\<Sawsbuck\>\""}], ",", 
+      RowBox[{"\"\<Silvally-*\>\"", "\[Rule]", "\"\<Silvally\>\""}], ",", 
+      RowBox[{"\"\<Type: Null\>\"", "\[Rule]", "\"\<Type Null\>\""}], ",", 
+      RowBox[{"\"\<Vikavolt-Totem\>\"", "\[Rule]", "\"\<Vikavolt\>\""}], ",", 
+      RowBox[{"\"\<Vivillon-Jungle\>\"", "\[Rule]", "\"\<Vivillon\>\""}], ",", 
+      RowBox[{"\"\<Vivillon-Marine\>\"", "\[Rule]", "\"\<Vivillon\>\""}], ",", 
+      RowBox[{"\"\<Vivillon-Pokeball\>\"", "\[Rule]", "\"\<Vivillon\>\""}], 
+      ",", 
+      RowBox[{"\"\<Vivillon-Tundra\>\"", "\[Rule]", "\"\<Vivillon\>\""}]}], 
+     "}"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"dataVGCTrain", "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"StringSplit", "[", 
+      RowBox[{"#", ",", "\"\<,\>\""}], "]"}], "&"}], "/@", 
+    RowBox[{"StringJoin", "@@@", 
+     RowBox[{
+      RowBox[{"Partition", "[", 
+       RowBox[{
+        RowBox[{"StringSplit", "[", 
+         RowBox[{"dataVGCTrain", ",", "\"\<\\n\>\""}], "]"}], ",", "4"}], 
+       "]"}], "[", 
+      RowBox[{"[", 
+       RowBox[{"All", ",", 
+        RowBox[{"2", ";;", "All"}]}], "]"}], "]"}]}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"dataVGCTest", "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"StringSplit", "[", 
+      RowBox[{"#", ",", "\"\<,\>\""}], "]"}], "&"}], "/@", 
+    RowBox[{"StringJoin", "@@@", 
+     RowBox[{
+      RowBox[{"Partition", "[", 
+       RowBox[{
+        RowBox[{"StringSplit", "[", 
+         RowBox[{"dataVGCTest", ",", "\"\<\\n\>\""}], "]"}], ",", "4"}], 
+       "]"}], "[", 
+      RowBox[{"[", 
+       RowBox[{"All", ",", 
+        RowBox[{"2", ";;", "All"}]}], "]"}], "]"}]}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"dataVGC", "=", 
+   RowBox[{
+    RowBox[{"Join", "[", 
+     RowBox[{"dataVGCTrain", ",", "dataVGCTest"}], "]"}], "/.", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"\"\<Araquanid-Totem\>\"", "\[Rule]", "\"\<Araquanid\>\""}], 
+      ",", 
+      RowBox[{"\"\<Florges-White\>\"", "\[Rule]", "\"\<Florges\>\""}], ",", 
+      RowBox[{"\"\<Gastrodon-East\>\"", "\[Rule]", "\"\<Gastrodon\>\""}], ",", 
+      RowBox[{"\"\<Gourgeist-*\>\"", "\[Rule]", "\"\<Gourgeist\>\""}], ",", 
+      RowBox[{"\"\<Meowstic\>\"", "\[Rule]", "\"\<Meowstic-M\>\""}], ",", 
+      RowBox[{"\"\<Mimikyu-Totem\>\"", "\[Rule]", "\"\<Mimikyu\>\""}], ",", 
+      RowBox[{"\"\<Minior-Blue\>\"", "\[Rule]", "\"\<Minior\>\""}], ",", 
+      RowBox[{
+      "\"\<Necrozma-Dawn-Wings\>\"", "\[Rule]", 
+       "\"\<Necrozma-Dawn Wings\>\""}], ",", 
+      RowBox[{
+      "\"\<Necrozma-Dusk-Mane\>\"", "\[Rule]", "\"\<Necrozma-Dusk Mane\>\""}],
+       ",", 
+      RowBox[{"\"\<Sawsbuck-Autumn\>\"", "\[Rule]", "\"\<Sawsbuck\>\""}], ",", 
+      RowBox[{"\"\<Sawsbuck-Winter\>\"", "\[Rule]", "\"\<Sawsbuck\>\""}], ",", 
+      RowBox[{"\"\<Silvally-*\>\"", "\[Rule]", "\"\<Silvally\>\""}], ",", 
+      RowBox[{"\"\<Vivillon-Icysnow\>\"", "\[Rule]", "\"\<Vivillon\>\""}], 
+      ",", 
+      RowBox[{"\"\<Vivillon-Marine\>\"", "\[Rule]", "\"\<Vivillon\>\""}], ",", 
+      RowBox[{"\"\<Vivillon-Monsoon\>\"", "\[Rule]", "\"\<Vivillon\>\""}], 
+      ",", 
+      RowBox[{"\"\<Vivillon-Ocean\>\"", "\[Rule]", "\"\<Vivillon\>\""}]}], 
+     "}"}]}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.778083984417205*^9, 3.7780840802577505`*^9}, {
+  3.778084241113902*^9, 3.778084272898348*^9}, {3.778084644299131*^9, 
+  3.7780849959928913`*^9}, {3.77808672383506*^9, 
+  3.7780867501778793`*^9}},ExpressionUUID->"a74438ab-0416-4cec-9cc0-\
+8eea5fc9b14f"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"wrangle", "[", "data2_", "]"}], ":=", "\[IndentingNewLine]", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"k", ",", "data"}], "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"data", "=", "data2"}], ";", "\[IndentingNewLine]", 
+     RowBox[{"Do", "[", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"k", "=", 
+         RowBox[{"data", "[", 
+          RowBox[{"[", "g", "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+        RowBox[{"team1", "=", 
+         RowBox[{"k", "[", 
+          RowBox[{"[", 
+           RowBox[{"1", ";;", "6"}], "]"}], "]"}]}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"team2", "=", 
+         RowBox[{"k", "[", 
+          RowBox[{"[", 
+           RowBox[{"7", ";;", "12"}], "]"}], "]"}]}], ";", 
+        "\[IndentingNewLine]", "\[IndentingNewLine]", 
+        RowBox[{"(*", 
+         RowBox[{
+         "Count", " ", "Totals", " ", "of", " ", "each", " ", "type"}], 
+         "*)"}], "\[IndentingNewLine]", 
+        RowBox[{"team1Types", "=", 
+         RowBox[{"Tally", "@", 
+          RowBox[{"Flatten", "[", 
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{"statass", "/@", "team1"}], ")"}], "[", 
+            RowBox[{"[", 
+             RowBox[{"All", ",", 
+              RowBox[{"9", ";;", "10"}]}], "]"}], "]"}], "]"}]}]}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"team1Types", "=", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"Association", "[", 
+            RowBox[{"Rule", "@@@", "team1Types"}], "]"}], "/@", 
+           RowBox[{"{", 
+            RowBox[{
+            "\"\<None\>\"", ",", "\"\<Normal\>\"", ",", "\"\<Fighting\>\"", 
+             ",", "\"\<Flying\>\"", ",", "\"\<Poison\>\"", ",", 
+             "\"\<Ground\>\"", ",", "\"\<Rock\>\"", ",", "\"\<Bug\>\"", ",", 
+             "\"\<Ghost\>\"", ",", "\"\<Steel\>\"", ",", "\"\<Fire\>\"", ",", 
+             "\"\<Water\>\"", ",", "\"\<Grass\>\"", ",", "\"\<Electric\>\"", 
+             ",", "\"\<Psychic\>\"", ",", "\"\<Ice\>\"", ",", 
+             "\"\<Dragon\>\"", ",", "\"\<Dark\>\"", ",", "\"\<Fairy\>\""}], 
+            "}"}]}], "/.", 
+          RowBox[{
+           RowBox[{"Missing", "[", 
+            RowBox[{"\"\<KeyAbsent\>\"", ",", "_"}], "]"}], "\[RuleDelayed]", 
+           "0"}]}]}], ";", "\[IndentingNewLine]", 
+        RowBox[{"team2Types", "=", 
+         RowBox[{"Tally", "@", 
+          RowBox[{"Flatten", "[", 
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{"statass", "/@", "team2"}], ")"}], "[", 
+            RowBox[{"[", 
+             RowBox[{"All", ",", 
+              RowBox[{"9", ";;", "10"}]}], "]"}], "]"}], "]"}]}]}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"team2Types", "=", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"Association", "[", 
+            RowBox[{"Rule", "@@@", "team2Types"}], "]"}], "/@", 
+           RowBox[{"{", 
+            RowBox[{
+            "\"\<None\>\"", ",", "\"\<Normal\>\"", ",", "\"\<Fighting\>\"", 
+             ",", "\"\<Flying\>\"", ",", "\"\<Poison\>\"", ",", 
+             "\"\<Ground\>\"", ",", "\"\<Rock\>\"", ",", "\"\<Bug\>\"", ",", 
+             "\"\<Ghost\>\"", ",", "\"\<Steel\>\"", ",", "\"\<Fire\>\"", ",", 
+             "\"\<Water\>\"", ",", "\"\<Grass\>\"", ",", "\"\<Electric\>\"", 
+             ",", "\"\<Psychic\>\"", ",", "\"\<Ice\>\"", ",", 
+             "\"\<Dragon\>\"", ",", "\"\<Dark\>\"", ",", "\"\<Fairy\>\""}], 
+            "}"}]}], "/.", 
+          RowBox[{
+           RowBox[{"Missing", "[", 
+            RowBox[{"\"\<KeyAbsent\>\"", ",", "_"}], "]"}], "\[RuleDelayed]", 
+           "0"}]}]}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+        RowBox[{"(*", 
+         RowBox[{"Mean", " ", "stats"}], "*)"}], "\[IndentingNewLine]", 
+        RowBox[{"team1Means", "=", 
+         RowBox[{"N", "@", 
+          RowBox[{"Mean", "[", 
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{"statass", "/@", "team1"}], ")"}], "[", 
+            RowBox[{"[", 
+             RowBox[{"All", ",", 
+              RowBox[{"1", ";;", "6"}]}], "]"}], "]"}], "]"}]}]}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"team2Means", "=", 
+         RowBox[{"N", "@", 
+          RowBox[{"Mean", "[", 
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{"statass", "/@", "team2"}], ")"}], "[", 
+            RowBox[{"[", 
+             RowBox[{"All", ",", 
+              RowBox[{"1", ";;", "6"}]}], "]"}], "]"}], "]"}]}]}], ";", 
+        "\[IndentingNewLine]", "\[IndentingNewLine]", 
+        RowBox[{"(*", 
+         RowBox[{"Stat", " ", "standard", " ", "deviations"}], "*)"}], 
+        "\[IndentingNewLine]", 
+        RowBox[{"team1Std", "=", 
+         RowBox[{"N", "@", 
+          RowBox[{"StandardDeviation", "[", 
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{"statass", "/@", "team1"}], ")"}], "[", 
+            RowBox[{"[", 
+             RowBox[{"All", ",", 
+              RowBox[{"1", ";;", "6"}]}], "]"}], "]"}], "]"}]}]}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"team2Std", "=", 
+         RowBox[{"N", "@", 
+          RowBox[{"StandardDeviation", "[", 
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{"statass", "/@", "team2"}], ")"}], "[", 
+            RowBox[{"[", 
+             RowBox[{"All", ",", 
+              RowBox[{"1", ";;", "6"}]}], "]"}], "]"}], "]"}]}]}], ";", 
+        "\[IndentingNewLine]", "\[IndentingNewLine]", 
+        RowBox[{"(*", 
+         RowBox[{"Type", " ", "Defence", " ", "totals"}], "*)"}], 
+        "\[IndentingNewLine]", 
+        RowBox[{"team1DefMeans", "=", 
+         RowBox[{"N", "@", 
+          RowBox[{"Mean", "[", 
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{"statass", "/@", "team1"}], ")"}], "[", 
+            RowBox[{"[", 
+             RowBox[{"All", ",", 
+              RowBox[{"15", ";;", "All"}]}], "]"}], "]"}], "]"}]}]}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"team2DefMeans", "=", 
+         RowBox[{"N", "@", 
+          RowBox[{"Mean", "[", 
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{"statass", "/@", "team2"}], ")"}], "[", 
+            RowBox[{"[", 
+             RowBox[{"All", ",", 
+              RowBox[{"15", ";;", "All"}]}], "]"}], "]"}], "]"}]}]}], ";", 
+        "\[IndentingNewLine]", "\[IndentingNewLine]", 
+        RowBox[{"(*", 
+         RowBox[{"Type", " ", "Defence", " ", "means"}], "*)"}], 
+        "\[IndentingNewLine]", 
+        RowBox[{"team1DefMean", "=", 
+         RowBox[{"Mean", "@", 
+          RowBox[{"N", "@", 
+           RowBox[{"Mean", "[", 
+            RowBox[{
+             RowBox[{"(", 
+              RowBox[{"statass", "/@", "team1"}], ")"}], "[", 
+             RowBox[{"[", 
+              RowBox[{"All", ",", 
+               RowBox[{"15", ";;", "All"}]}], "]"}], "]"}], "]"}]}]}]}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"team2DefMean", "=", 
+         RowBox[{"Mean", "@", 
+          RowBox[{"N", "@", 
+           RowBox[{"Mean", "[", 
+            RowBox[{
+             RowBox[{"(", 
+              RowBox[{"statass", "/@", "team2"}], ")"}], "[", 
+             RowBox[{"[", 
+              RowBox[{"All", ",", 
+               RowBox[{"15", ";;", "All"}]}], "]"}], "]"}], "]"}]}]}]}], ";", 
+        "\[IndentingNewLine]", "\[IndentingNewLine]", 
+        RowBox[{"(*", 
+         RowBox[{"Total", " ", "type", " ", "imunities"}], "*)"}], 
+        "\[IndentingNewLine]", 
+        RowBox[{"team1Immunities", "=", 
+         RowBox[{"Count", "[", 
+          RowBox[{
+           RowBox[{"Flatten", "[", 
+            RowBox[{
+             RowBox[{"(", 
+              RowBox[{"statass", "/@", "team1"}], ")"}], "[", 
+             RowBox[{"[", 
+              RowBox[{"All", ",", 
+               RowBox[{"15", ";;", "All"}]}], "]"}], "]"}], "]"}], ",", "0"}],
+           "]"}]}], ";", "\[IndentingNewLine]", 
+        RowBox[{"team2Immunities", "=", 
+         RowBox[{"Count", "[", 
+          RowBox[{
+           RowBox[{"Flatten", "[", 
+            RowBox[{
+             RowBox[{"(", 
+              RowBox[{"statass", "/@", "team2"}], ")"}], "[", 
+             RowBox[{"[", 
+              RowBox[{"All", ",", 
+               RowBox[{"15", ";;", "All"}]}], "]"}], "]"}], "]"}], ",", "0"}],
+           "]"}]}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+        RowBox[{"(*", 
+         RowBox[{"Individual", " ", "type", " ", "imunities"}], "*)"}], 
+        "\[IndentingNewLine]", 
+        RowBox[{"team1Immunity", "=", 
+         RowBox[{"Association", "[", 
+          RowBox[{"Rule", "@@@", 
+           RowBox[{"Tally", "[", 
+            RowBox[{
+             RowBox[{"Flatten", "[", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"Position", "[", 
+                 RowBox[{"#", ",", "0"}], "]"}], "&"}], "/@", 
+               RowBox[{
+                RowBox[{"(", 
+                 RowBox[{"statass", "/@", "team1"}], ")"}], "[", 
+                RowBox[{"[", 
+                 RowBox[{"All", ",", 
+                  RowBox[{"15", ";;", "All"}]}], "]"}], "]"}]}], "]"}], "/.", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"1", "\[Rule]", "\"\<Normal\>\""}], ",", 
+               RowBox[{"13", "\[Rule]", "\"\<Electric\>\""}], ",", 
+               RowBox[{"2", "\[Rule]", "\"\<Fighting\>\""}], ",", 
+               RowBox[{"4", "\[Rule]", "\"\<Poison\>\""}], ",", 
+               RowBox[{"5", "\[Rule]", "\"\<Ground\>\""}], ",", 
+               RowBox[{"14", "\[Rule]", "\"\<Psychic\>\""}], ",", 
+               RowBox[{"16", "\[Rule]", "\"\<Dragon\>\""}], ",", 
+               RowBox[{"8", "\[Rule]", "\"\<Ghost\>\""}]}], "}"}]}], "]"}]}], 
+          "]"}]}], ";", "\[IndentingNewLine]", 
+        RowBox[{"team1Immunity", "=", 
+         RowBox[{
+          RowBox[{"team1Immunity", "/@", 
+           RowBox[{"{", 
+            RowBox[{
+            "\"\<Normal\>\"", ",", "\"\<Fighting\>\"", ",", "\"\<Poison\>\"", 
+             ",", "\"\<Ground\>\"", ",", "\"\<Ghost\>\"", ",", 
+             "\"\<Electric\>\"", ",", "\"\<Psychic\>\"", ",", 
+             "\"\<Dragon\>\""}], "}"}]}], "/.", 
+          RowBox[{
+           RowBox[{"Missing", "[", 
+            RowBox[{"\"\<KeyAbsent\>\"", ",", "_"}], "]"}], "\[RuleDelayed]", 
+           "0"}]}]}], ";", "\[IndentingNewLine]", 
+        RowBox[{"team2Immunity", "=", 
+         RowBox[{"Association", "[", 
+          RowBox[{"Rule", "@@@", 
+           RowBox[{"Tally", "[", 
+            RowBox[{
+             RowBox[{"Flatten", "[", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"Position", "[", 
+                 RowBox[{"#", ",", "0"}], "]"}], "&"}], "/@", 
+               RowBox[{
+                RowBox[{"(", 
+                 RowBox[{"statass", "/@", "team2"}], ")"}], "[", 
+                RowBox[{"[", 
+                 RowBox[{"All", ",", 
+                  RowBox[{"15", ";;", "All"}]}], "]"}], "]"}]}], "]"}], "/.", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"1", "\[Rule]", "\"\<Normal\>\""}], ",", 
+               RowBox[{"13", "\[Rule]", "\"\<Electric\>\""}], ",", 
+               RowBox[{"2", "\[Rule]", "\"\<Fighting\>\""}], ",", 
+               RowBox[{"4", "\[Rule]", "\"\<Poison\>\""}], ",", 
+               RowBox[{"5", "\[Rule]", "\"\<Ground\>\""}], ",", 
+               RowBox[{"14", "\[Rule]", "\"\<Psychic\>\""}], ",", 
+               RowBox[{"16", "\[Rule]", "\"\<Dragon\>\""}], ",", 
+               RowBox[{"8", "\[Rule]", "\"\<Ghost\>\""}]}], "}"}]}], "]"}]}], 
+          "]"}]}], ";", "\[IndentingNewLine]", 
+        RowBox[{"team2Immunity", "=", 
+         RowBox[{
+          RowBox[{"team2Immunity", "/@", 
+           RowBox[{"{", 
+            RowBox[{
+            "\"\<Normal\>\"", ",", "\"\<Fighting\>\"", ",", "\"\<Poison\>\"", 
+             ",", "\"\<Ground\>\"", ",", "\"\<Ghost\>\"", ",", 
+             "\"\<Electric\>\"", ",", "\"\<Psychic\>\"", ",", 
+             "\"\<Dragon\>\""}], "}"}]}], "/.", 
+          RowBox[{
+           RowBox[{"Missing", "[", 
+            RowBox[{"\"\<KeyAbsent\>\"", ",", "_"}], "]"}], "\[RuleDelayed]", 
+           "0"}]}]}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+        RowBox[{"(*", 
+         RowBox[{"Total", " ", "type", " ", "x4", " ", "weaknesses"}], "*)"}],
+         "\[IndentingNewLine]", 
+        RowBox[{"team1SuperWeak", "=", 
+         RowBox[{"Count", "[", 
+          RowBox[{
+           RowBox[{"Flatten", "[", 
+            RowBox[{
+             RowBox[{"(", 
+              RowBox[{"statass", "/@", "team1"}], ")"}], "[", 
+             RowBox[{"[", 
+              RowBox[{"All", ",", 
+               RowBox[{"15", ";;", "All"}]}], "]"}], "]"}], "]"}], ",", 
+           "16"}], "]"}]}], ";", "\[IndentingNewLine]", 
+        RowBox[{"team2SuperWeak", "=", 
+         RowBox[{"Count", "[", 
+          RowBox[{
+           RowBox[{"Flatten", "[", 
+            RowBox[{
+             RowBox[{"(", 
+              RowBox[{"statass", "/@", "team2"}], ")"}], "[", 
+             RowBox[{"[", 
+              RowBox[{"All", ",", 
+               RowBox[{"15", ";;", "All"}]}], "]"}], "]"}], "]"}], ",", 
+           "16"}], "]"}]}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+        RowBox[{"(*", 
+         RowBox[{"Max", " ", "stats"}], "*)"}], "\[IndentingNewLine]", 
+        RowBox[{"team1Max", "=", 
+         RowBox[{"Max", "@@@", 
+          RowBox[{"Thread", "[", 
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{"statass", "/@", "team1"}], ")"}], "[", 
+            RowBox[{"[", 
+             RowBox[{"All", ",", 
+              RowBox[{"1", ";;", "6"}]}], "]"}], "]"}], "]"}]}]}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"team2Max", "=", 
+         RowBox[{"Max", "@@@", 
+          RowBox[{"Thread", "[", 
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{"statass", "/@", "team2"}], ")"}], "[", 
+            RowBox[{"[", 
+             RowBox[{"All", ",", 
+              RowBox[{"1", ";;", "6"}]}], "]"}], "]"}], "]"}]}]}], ";", 
+        "\[IndentingNewLine]", "\[IndentingNewLine]", 
+        RowBox[{"(*", 
+         RowBox[{"Min", " ", "stats"}], "*)"}], "\[IndentingNewLine]", 
+        RowBox[{"team1Min", "=", 
+         RowBox[{"Min", "@@@", 
+          RowBox[{"Thread", "[", 
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{"statass", "/@", "team1"}], ")"}], "[", 
+            RowBox[{"[", 
+             RowBox[{"All", ",", 
+              RowBox[{"1", ";;", "6"}]}], "]"}], "]"}], "]"}]}]}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"team2Min", "=", 
+         RowBox[{"Min", "@@@", 
+          RowBox[{"Thread", "[", 
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{"statass", "/@", "team2"}], ")"}], "[", 
+            RowBox[{"[", 
+             RowBox[{"All", ",", 
+              RowBox[{"1", ";;", "6"}]}], "]"}], "]"}], "]"}]}]}], ";", 
+        "\[IndentingNewLine]", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"data", "[", 
+          RowBox[{"[", "g", "]"}], "]"}], "=", 
+         RowBox[{"Join", "[", "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"k", "/.", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"\"\<1\>\"", "\[Rule]", "1"}], ",", 
+              RowBox[{"\"\<2\>\"", "\[Rule]", "2"}]}], "}"}]}], ",", 
+           "\[IndentingNewLine]", "team1Types", ",", "\[IndentingNewLine]", 
+           "team2Types", ",", "\[IndentingNewLine]", "team1Means", ",", 
+           "\[IndentingNewLine]", "team2Means", ",", "\[IndentingNewLine]", 
+           "team1Std", ",", "\[IndentingNewLine]", "team2Std", ",", 
+           "\[IndentingNewLine]", "team1DefMeans", ",", "\[IndentingNewLine]",
+            "team2DefMeans", ",", "\[IndentingNewLine]", 
+           RowBox[{"{", 
+            RowBox[{
+            "team1DefMean", ",", "team2DefMean", ",", "team1Immunities", ",", 
+             "team2Immunities"}], "}"}], ",", "\[IndentingNewLine]", 
+           "team1Immunity", ",", "\[IndentingNewLine]", "team2Immunity", ",", 
+           "\[IndentingNewLine]", 
+           RowBox[{"{", 
+            RowBox[{"team1SuperWeak", ",", "team2SuperWeak"}], "}"}], ",", 
+           "\[IndentingNewLine]", "team1Max", ",", "\[IndentingNewLine]", 
+           "team2Max", ",", "\[IndentingNewLine]", "team1Min", ",", 
+           "\[IndentingNewLine]", "team2Min"}], "\[IndentingNewLine]", 
+          "]"}]}]}], "\[IndentingNewLine]", ",", 
+       RowBox[{"{", 
+        RowBox[{"g", ",", 
+         RowBox[{"Length", "@", "data"}]}], "}"}]}], "]"}], ";", 
+     "\[IndentingNewLine]", "data"}]}], "\[IndentingNewLine]", 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.77808533329296*^9, 3.778085374712765*^9}, {
+   3.7780854576375465`*^9, 3.778085509235579*^9}, {3.7780855839782906`*^9, 
+   3.7780856044548597`*^9}, {3.7780859199173126`*^9, 3.7780859614306507`*^9}, 
+   3.778086006268175*^9, {3.778086385241691*^9, 3.778086403770718*^9}, {
+   3.778086576794387*^9, 
+   3.778086712561196*^9}},ExpressionUUID->"7c91ab20-e866-4ef2-bcf3-\
+a3e7e348dcbd"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"featureNames", "=", 
+    RowBox[{"{", 
+     RowBox[{
+     "\"\<team_1_first\>\"", ",", "\"\<team_1_second\>\"", ",", 
+      "\"\<team_1_third\>\"", ",", "\"\<team_1_fourth\>\"", ",", 
+      "\"\<team_1_fifth\>\"", ",", "\"\<team_1_sixth\>\"", ",", 
+      "\"\<team_2_first\>\"", ",", "\"\<team_2_second\>\"", ",", 
+      "\"\<team_2_third\>\"", ",", "\"\<team_2_fourth\>\"", ",", 
+      "\"\<team_2_fifth\>\"", ",", "\"\<team_2_sixth\>\"", ",", 
+      "\"\<winner\>\"", ",", "\"\<team1_Nones\>\"", ",", 
+      "\"\<team1_Normals\>\"", ",", "\"\<team1_Fightings\>\"", ",", 
+      "\"\<team1_Flyings\>\"", ",", "\"\<team1_Poisons\>\"", ",", 
+      "\"\<team1_Grounds\>\"", ",", "\"\<team1_Rocks\>\"", ",", 
+      "\"\<team1_Bugs\>\"", ",", "\"\<team1_Ghosts\>\"", ",", 
+      "\"\<team1_Steels\>\"", ",", "\"\<team1_Fires\>\"", ",", 
+      "\"\<team1_Waters\>\"", ",", "\"\<team1_Grasss\>\"", ",", 
+      "\"\<team1_Electrics\>\"", ",", "\"\<team1_Psychics\>\"", ",", 
+      "\"\<team1_Ices\>\"", ",", "\"\<team1_Dragons\>\"", ",", 
+      "\"\<team1_Darks\>\"", ",", "\"\<team1_Fairys\>\"", ",", 
+      "\"\<team2_Nones\>\"", ",", "\"\<team2_Normals\>\"", ",", 
+      "\"\<team2_Fightings\>\"", ",", "\"\<team2_Flyings\>\"", ",", 
+      "\"\<team2_Poisons\>\"", ",", "\"\<team2_Grounds\>\"", ",", 
+      "\"\<team2_Rocks\>\"", ",", "\"\<team2_Bugs\>\"", ",", 
+      "\"\<team2_Ghosts\>\"", ",", "\"\<team2_Steels\>\"", ",", 
+      "\"\<team2_Fires\>\"", ",", "\"\<team2_Waters\>\"", ",", 
+      "\"\<team2_Grasss\>\"", ",", "\"\<team2_Electrics\>\"", ",", 
+      "\"\<team2_Psychics\>\"", ",", "\"\<team2_Ices\>\"", ",", 
+      "\"\<team2_Dragons\>\"", ",", "\"\<team2_Darks\>\"", ",", 
+      "\"\<team2_Fairys\>\"", ",", "\"\<team1_hp_mean\>\"", ",", 
+      "\"\<team1_atk_mean\>\"", ",", "\"\<team1_def_mean\>\"", ",", 
+      "\"\<team1_spa_mean\>\"", ",", "\"\<team1_spd_mean\>\"", ",", 
+      "\"\<team1_spe_mean\>\"", ",", "\"\<team2_hp_mean\>\"", ",", 
+      "\"\<team2_atk_mean\>\"", ",", "\"\<team2_def_mean\>\"", ",", 
+      "\"\<team2_spa_mean\>\"", ",", "\"\<team2_spd_mean\>\"", ",", 
+      "\"\<team2_spe_mean\>\"", ",", "\"\<team1_hp_std\>\"", ",", 
+      "\"\<team1_atk_std\>\"", ",", "\"\<team1_def_std\>\"", ",", 
+      "\"\<team1_spa_std\>\"", ",", "\"\<team1_spd_std\>\"", ",", 
+      "\"\<team1_spe_std\>\"", ",", "\"\<team2_hp_std\>\"", ",", 
+      "\"\<team2_atk_std\>\"", ",", "\"\<team2_def_std\>\"", ",", 
+      "\"\<team2_spa_std\>\"", ",", "\"\<team2_spd_std\>\"", ",", 
+      "\"\<team2_spe_std\>\"", ",", "\"\<team1_Normal_typedef\>\"", ",", 
+      "\"\<team1_Fighting_typedef\>\"", ",", "\"\<team1_Flying_typedef\>\"", 
+      ",", "\"\<team1_Poison_typedef\>\"", ",", 
+      "\"\<team1_Ground_typedef\>\"", ",", "\"\<team1_Rock_typedef\>\"", ",", 
+      "\"\<team1_Bug_typedef\>\"", ",", "\"\<team1_Ghost_typedef\>\"", ",", 
+      "\"\<team1_Steel_typedef\>\"", ",", "\"\<team1_Fire_typedef\>\"", ",", 
+      "\"\<team1_Water_typedef\>\"", ",", "\"\<team1_Grass_typedef\>\"", ",", 
+      "\"\<team1_Electric_typedef\>\"", ",", "\"\<team1_Psychic_typedef\>\"", 
+      ",", "\"\<team1_Ice_typedef\>\"", ",", "\"\<team1_Dragon_typedef\>\"", 
+      ",", "\"\<team1_Dark_typedef\>\"", ",", "\"\<team1_Fairy_typedef\>\"", 
+      ",", "\"\<team2_Normal_typedef\>\"", ",", 
+      "\"\<team2_Fighting_typedef\>\"", ",", "\"\<team2_Flying_typedef\>\"", 
+      ",", "\"\<team2_Poison_typedef\>\"", ",", 
+      "\"\<team2_Ground_typedef\>\"", ",", "\"\<team2_Rock_typedef\>\"", ",", 
+      "\"\<team2_Bug_typedef\>\"", ",", "\"\<team2_Ghost_typedef\>\"", ",", 
+      "\"\<team2_Steel_typedef\>\"", ",", "\"\<team2_Fire_typedef\>\"", ",", 
+      "\"\<team2_Water_typedef\>\"", ",", "\"\<team2_Grass_typedef\>\"", ",", 
+      "\"\<team2_Electric_typedef\>\"", ",", "\"\<team2_Psychic_typedef\>\"", 
+      ",", "\"\<team2_Ice_typedef\>\"", ",", "\"\<team2_Dragon_typedef\>\"", 
+      ",", "\"\<team2_Dark_typedef\>\"", ",", "\"\<team2_Fairy_typedef\>\"", 
+      ",", "\"\<team1_mean_typedef\>\"", ",", "\"\<team2_mean_typedef\>\"", 
+      ",", "\"\<team1_immunities\>\"", ",", "\"\<team2_immunities\>\"", ",", 
+      "\"\<team1_Normal_immunity\>\"", ",", "\"\<team1_Fighting_immunity\>\"",
+       ",", "\"\<team1_Poison_immunity\>\"", ",", 
+      "\"\<team1_Ground_immunity\>\"", ",", "\"\<team1_Ghost_immunity\>\"", 
+      ",", "\"\<team1_Electric_immunity\>\"", ",", 
+      "\"\<team1_Psychic_immunity\>\"", ",", "\"\<team1_Dragon_immunity\>\"", 
+      ",", "\"\<team2_Normal_immunity\>\"", ",", 
+      "\"\<team2_Fighting_immunity\>\"", ",", "\"\<team2_Poison_immunity\>\"",
+       ",", "\"\<team2_Ground_immunity\>\"", ",", 
+      "\"\<team2_Ghost_immunity\>\"", ",", "\"\<team2_Electric_immunity\>\"", 
+      ",", "\"\<team2_Psychic_immunity\>\"", ",", 
+      "\"\<team2_Dragon_immunity\>\"", ",", "\"\<team1_superweaknesses\>\"", 
+      ",", "\"\<team2_superweaknesses\>\"", ",", "\"\<hp_max_1\>\"", ",", 
+      "\"\<atk_max_1\>\"", ",", "\"\<def_max_1\>\"", ",", "\"\<spa_max_1\>\"",
+       ",", "\"\<spd_max_1\>\"", ",", "\"\<spe_max_1\>\"", ",", 
+      "\"\<hp_max_2\>\"", ",", "\"\<atk_max_2\>\"", ",", "\"\<def_max_2\>\"", 
+      ",", "\"\<spa_max_2\>\"", ",", "\"\<spd_max_2\>\"", ",", 
+      "\"\<spe_max_2\>\"", ",", "\"\<hp_min_1\>\"", ",", "\"\<atk_min_1\>\"", 
+      ",", "\"\<def_min_1\>\"", ",", "\"\<spa_min_1\>\"", ",", 
+      "\"\<spd_min_1\>\"", ",", "\"\<spe_min_1\>\"", ",", "\"\<hp_min_2\>\"", 
+      ",", "\"\<atk_min_2\>\"", ",", "\"\<def_min_2\>\"", ",", 
+      "\"\<spa_min_2\>\"", ",", "\"\<spd_min_2\>\"", ",", 
+      "\"\<spe_min_2\>\""}], "}"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"dataOU", "=", 
+   RowBox[{"Prepend", "[", 
+    RowBox[{
+     RowBox[{"wrangle", "@", "dataOU"}], ",", "featureNames"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"dataVGC", "=", 
+   RowBox[{"Prepend", "[", 
+    RowBox[{
+     RowBox[{"wrangle", "@", "dataVGC"}], ",", "featureNames"}], "]"}]}], 
+  ";"}]}], "Input",
+ CellChangeTimes->{{3.7780860075894823`*^9, 3.778086033541922*^9}, {
+  3.778086087668075*^9, 3.7780861068585925`*^9}, {3.778102080558855*^9, 
+  3.7781021165301757`*^9}},ExpressionUUID->"6af204e9-7a65-4d79-b74a-\
+371118b07c43"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Export", "[", 
+  RowBox[{"\"\<ou.csv\>\"", ",", "dataOU"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Export", "[", 
+  RowBox[{"\"\<vgcSun.csv\>\"", ",", "dataVGC"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.7780865525549707`*^9, 3.7780865693397217`*^9}},
+ CellLabel->
+  "In[180]:=",ExpressionUUID->"99d72c88-e5eb-46a2-b788-24f593c097df"],
+
+Cell[BoxData["\<\"ou.csv\"\>"], "Output",
+ CellChangeTimes->{3.7780870154480352`*^9},
+ CellLabel->
+  "Out[180]=",ExpressionUUID->"b270be37-810b-41b1-bf2b-b072ac59b462"],
+
+Cell[BoxData["\<\"vgcSun.csv\"\>"], "Output",
+ CellChangeTimes->{3.7780870291881523`*^9},
+ CellLabel->
+  "Out[181]=",ExpressionUUID->"5be0b6ae-4d5f-448b-b46b-464dd1507f8b"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{"Function", " ", "for", " ", "1"}], "-", 
+    RowBox[{"hot", " ", "encoding", " ", "pokemon"}]}], "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"hotEncode", "[", "dat_", "]"}], ":=", 
+   RowBox[{
+    RowBox[{"Join", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"Function", "[", 
+           RowBox[{"x", ",", 
+            RowBox[{"MemberQ", "[", 
+             RowBox[{"#", ",", "x"}], "]"}]}], "]"}], "/@", "pokeList"}], 
+         ")"}], "&"}], "@", 
+       RowBox[{"dat", "[", 
+        RowBox[{"[", 
+         RowBox[{"1", ";;", "6"}], "]"}], "]"}]}], ",", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"Function", "[", 
+           RowBox[{"x", ",", 
+            RowBox[{"MemberQ", "[", 
+             RowBox[{"#", ",", "x"}], "]"}]}], "]"}], "/@", "pokeList"}], 
+         ")"}], "&"}], "@", 
+       RowBox[{"dat", "[", 
+        RowBox[{"[", 
+         RowBox[{"7", ";;", "12"}], "]"}], "]"}]}]}], "]"}], "/.", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"False", "\[Rule]", "0"}], ",", 
+      RowBox[{"True", "\[Rule]", "1"}]}], "}"}]}]}]}]], "Input",
+ CellChangeTimes->{{3.7780016291216784`*^9, 3.7780016598857765`*^9}, {
+  3.7780868541440187`*^9, 3.7780868794862223`*^9}},
+ CellLabel->
+  "In[182]:=",ExpressionUUID->"c3a77ad0-948c-41f7-8487-e993e2095a8d"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{
+    "Convert", " ", "OU", " ", "data", " ", "into", " ", "one", " ", "which", 
+     " ", "is", " ", "one"}], "-", "hot", "-", "encoded"}], "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"data", "=", 
+     RowBox[{"Import", "[", "\"\<ou.csv\>\"", "]"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"pokeList", "=", 
+     RowBox[{"Sort", "@", 
+      RowBox[{
+       RowBox[{"Tally", "[", 
+        RowBox[{"Flatten", "[", 
+         RowBox[{"data", "[", 
+          RowBox[{"[", 
+           RowBox[{
+            RowBox[{"2", ";;", "All"}], ",", 
+            RowBox[{"1", ";;", "12"}]}], "]"}], "]"}], "]"}], "]"}], "[", 
+       RowBox[{"[", 
+        RowBox[{"All", ",", "1"}], "]"}], "]"}]}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"hotPokes", "=", 
+     RowBox[{"Prepend", "[", 
+      RowBox[{
+       RowBox[{"hotEncode", "/@", 
+        RowBox[{"data", "[", 
+         RowBox[{"[", 
+          RowBox[{"2", ";;", "All"}], "]"}], "]"}]}], ",", 
+       RowBox[{"Join", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{
+           RowBox[{"#", "<>", "\"\<_team_1\>\""}], "&"}], "/@", "pokeList"}], 
+         ",", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"#", "<>", "\"\<_team_2\>\""}], "&"}], "/@", 
+          "pokeList"}]}], "]"}]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"remData", "=", 
+     RowBox[{"data", "[", 
+      RowBox[{"[", 
+       RowBox[{"All", ",", 
+        RowBox[{"14", ";;", "All"}]}], "]"}], "]"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"winData", "=", 
+     RowBox[{
+      RowBox[{"data", "[", 
+       RowBox[{"[", 
+        RowBox[{"All", ",", "13"}], "]"}], "]"}], "/.", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"1", "\[Rule]", "\"\<team_1\>\""}], ",", 
+        RowBox[{"2", "\[Rule]", "\"\<team_2\>\""}]}], "}"}]}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"newData", "=", 
+     RowBox[{"Join", "@@@", 
+      RowBox[{"Thread", "[", 
+       RowBox[{"{", 
+        RowBox[{"hotPokes", ",", "remData", ",", 
+         RowBox[{"Transpose", "@", 
+          RowBox[{"{", "winData", "}"}]}]}], "}"}], "]"}]}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"Export", "[", 
+    RowBox[{"\"\<ou_hot.csv\>\"", ",", "newData"}], "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.778086883531392*^9, 3.77808690524829*^9}, 
+   3.7780869962272615`*^9},
+ CellLabel->
+  "In[183]:=",ExpressionUUID->"73fa4fd5-abbb-411c-b3cf-74932bbbdc63"],
+
+Cell[BoxData["\<\"ou_hot.csv\"\>"], "Output",
+ CellChangeTimes->{3.7780870734110575`*^9},
+ CellLabel->
+  "Out[189]=",ExpressionUUID->"267d8465-62b4-4cfa-86ce-687a5f2750f1"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{
+    "Convert", " ", "vgcSun", " ", "data", " ", "into", " ", "one", " ", 
+     "which", " ", "is", " ", "one"}], "-", "hot", "-", "encoded"}], "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"data", "=", 
+     RowBox[{"Import", "[", "\"\<vgcSun.csv\>\"", "]"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"pokeList", "=", 
+     RowBox[{"Sort", "@", 
+      RowBox[{
+       RowBox[{"Tally", "[", 
+        RowBox[{"Flatten", "[", 
+         RowBox[{"data", "[", 
+          RowBox[{"[", 
+           RowBox[{
+            RowBox[{"2", ";;", "All"}], ",", 
+            RowBox[{"1", ";;", "12"}]}], "]"}], "]"}], "]"}], "]"}], "[", 
+       RowBox[{"[", 
+        RowBox[{"All", ",", "1"}], "]"}], "]"}]}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"hotPokes", "=", 
+     RowBox[{"Prepend", "[", 
+      RowBox[{
+       RowBox[{"hotEncode", "/@", 
+        RowBox[{"data", "[", 
+         RowBox[{"[", 
+          RowBox[{"2", ";;", "All"}], "]"}], "]"}]}], ",", 
+       RowBox[{"Join", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{
+           RowBox[{"#", "<>", "\"\<_team_1\>\""}], "&"}], "/@", "pokeList"}], 
+         ",", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"#", "<>", "\"\<_team_2\>\""}], "&"}], "/@", 
+          "pokeList"}]}], "]"}]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"remData", "=", 
+     RowBox[{"data", "[", 
+      RowBox[{"[", 
+       RowBox[{"All", ",", 
+        RowBox[{"14", ";;", "All"}]}], "]"}], "]"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"winData", "=", 
+     RowBox[{
+      RowBox[{"data", "[", 
+       RowBox[{"[", 
+        RowBox[{"All", ",", "13"}], "]"}], "]"}], "/.", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"1", "\[Rule]", "\"\<team_1\>\""}], ",", 
+        RowBox[{"2", "\[Rule]", "\"\<team_2\>\""}]}], "}"}]}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"newData", "=", 
+     RowBox[{"Join", "@@@", 
+      RowBox[{"Thread", "[", 
+       RowBox[{"{", 
+        RowBox[{"hotPokes", ",", "remData", ",", 
+         RowBox[{"Transpose", "@", 
+          RowBox[{"{", "winData", "}"}]}]}], "}"}], "]"}]}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"Export", "[", 
+    RowBox[{"\"\<vgcSun_hot.csv\>\"", ",", "newData"}], "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.7780869151523767`*^9, 3.7780869241553273`*^9}, 
+   3.7780869923117433`*^9},
+ CellLabel->
+  "In[190]:=",ExpressionUUID->"cf187631-1fcd-488d-84bb-b463e934b6d0"],
+
+Cell[BoxData["\<\"vgcSun_hot.csv\"\>"], "Output",
+ CellChangeTimes->{3.7780871094971247`*^9},
+ CellLabel->
+  "Out[196]=",ExpressionUUID->"f9d9032b-77fd-4807-80b0-7a0be2e835ff"]
+}, Open  ]]
+},
+WindowSize->{1920, 1037},
+WindowMargins->{{-8, Automatic}, {Automatic, -8}},
+FrontEndVersion->"12.0 for Microsoft Windows (64-bit) (April 8, 2019)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 225, 3, 28, "Input",ExpressionUUID->"1168dad6-9720-462c-8e4f-4e29180d8cf5"],
+Cell[808, 27, 201, 2, 32, "Output",ExpressionUUID->"5159f33f-5fee-4c7e-b533-a0ca27ba8a5d"]
+}, Open  ]],
+Cell[1024, 32, 5623, 92, 200, "Input",ExpressionUUID->"7fde938a-8771-4c4b-a42e-7cc7302a8809"],
+Cell[6650, 126, 781, 22, 48, "Input",ExpressionUUID->"93c64f4e-c0b8-4c74-91d3-50a4442cd591"],
+Cell[7434, 150, 7694, 174, 352, "Input",ExpressionUUID->"a74438ab-0416-4cec-9cc0-8eea5fc9b14f"],
+Cell[15131, 326, 17045, 396, 1416, "Input",ExpressionUUID->"7c91ab20-e866-4ef2-bcf3-a3e7e348dcbd"],
+Cell[32179, 724, 6285, 103, 333, "Input",ExpressionUUID->"6af204e9-7a65-4d79-b74a-371118b07c43"],
+Cell[CellGroupData[{
+Cell[38489, 831, 361, 7, 48, "Input",ExpressionUUID->"99d72c88-e5eb-46a2-b788-24f593c097df"],
+Cell[38853, 840, 168, 3, 32, "Output",ExpressionUUID->"b270be37-810b-41b1-bf2b-b072ac59b462"],
+Cell[39024, 845, 172, 3, 32, "Output",ExpressionUUID->"5be0b6ae-4d5f-448b-b46b-464dd1507f8b"]
+}, Open  ]],
+Cell[39211, 851, 1442, 43, 48, "Input",ExpressionUUID->"c3a77ad0-948c-41f7-8487-e993e2095a8d"],
+Cell[CellGroupData[{
+Cell[40678, 898, 2561, 77, 162, "Input",ExpressionUUID->"73fa4fd5-abbb-411c-b3cf-74932bbbdc63"],
+Cell[43242, 977, 172, 3, 32, "Output",ExpressionUUID->"267d8465-62b4-4cfa-86ce-687a5f2750f1"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[43451, 985, 2578, 77, 162, "Input",ExpressionUUID->"cf187631-1fcd-488d-84bb-b463e934b6d0"],
+Cell[46032, 1064, 176, 3, 32, "Output",ExpressionUUID->"f9d9032b-77fd-4807-80b0-7a0be2e835ff"]
+}, Open  ]]
+}
+]
+*)
+
