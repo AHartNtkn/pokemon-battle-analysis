@@ -145,14 +145,265 @@ def vgcIndPred(team1, team2):
 def ouIndPred(team1, team2):
     return makeIndPred(fullTeamRow(team1, team2, ouPokes, ouIndex), ouk, ouModel)
 
-column1 = dbc.Col(
-    [
+# Lists for generating dropdown menus
+vgcDrop = list(map(lambda x: {'label': x, 'value': x}, vgcPokes))
+ouDrop = list(map(lambda x: {'label': x, 'value': x}, ouPokes))
 
+@app.callback(
+    [Output('team-1-percent-vgc', 'children'),
+     Output('team-2-percent-vgc', 'children'),
+     Output('team-1-percent-ou', 'children'),
+     Output('team-2-percent-ou', 'children'),
+     Output('vgc_icon_team1_1', 'src'), Output('vgc_icon_team1_2', 'src'), Output('vgc_icon_team1_3', 'src'),
+     Output('vgc_icon_team1_4', 'src'), Output('vgc_icon_team1_5', 'src'), Output('vgc_icon_team1_6', 'src'),
+     Output('vgc_icon_team2_1', 'src'), Output('vgc_icon_team2_2', 'src'), Output('vgc_icon_team2_3', 'src'),
+     Output('vgc_icon_team2_4', 'src'), Output('vgc_icon_team2_5', 'src'), Output('vgc_icon_team2_6', 'src'),
+     Output('ou_icon_team1_1', 'src'), Output('ou_icon_team1_2', 'src'), Output('ou_icon_team1_3', 'src'),
+     Output('ou_icon_team1_4', 'src'), Output('ou_icon_team1_5', 'src'), Output('ou_icon_team1_6', 'src'),
+     Output('ou_icon_team2_1', 'src'), Output('ou_icon_team2_2', 'src'), Output('ou_icon_team2_3', 'src'),
+     Output('ou_icon_team2_4', 'src'), Output('ou_icon_team2_5', 'src'), Output('ou_icon_team2_6', 'src')],
+    [Input('vgc_team1_1', 'value'), Input('vgc_team1_2', 'value'), Input('vgc_team1_3', 'value'),
+     Input('vgc_team1_4', 'value'), Input('vgc_team1_5', 'value'), Input('vgc_team1_6', 'value'),
+     Input('vgc_team2_1', 'value'), Input('vgc_team2_2', 'value'), Input('vgc_team2_3', 'value'),
+     Input('vgc_team2_4', 'value'), Input('vgc_team2_5', 'value'), Input('vgc_team2_6', 'value'),
+     Input('ou_team1_1', 'value'), Input('ou_team1_2', 'value'), Input('ou_team1_3', 'value'),
+     Input('ou_team1_4', 'value'), Input('ou_team1_5', 'value'), Input('ou_team1_6', 'value'),
+     Input('ou_team2_1', 'value'), Input('ou_team2_2', 'value'), Input('ou_team2_3', 'value'),
+     Input('ou_team2_4', 'value'), Input('ou_team2_5', 'value'), Input('ou_team2_6', 'value')
+    ])
+def multi_output(vgc_team1_1, vgc_team1_2, vgc_team1_3, vgc_team1_4, vgc_team1_5, vgc_team1_6,
+                 vgc_team2_1, vgc_team2_2, vgc_team2_3, vgc_team2_4, vgc_team2_5, vgc_team2_6,
+                 ou_team1_1, ou_team1_2, ou_team1_3, ou_team1_4, ou_team1_5, ou_team1_6,
+                 ou_team2_1, ou_team2_2, ou_team2_3, ou_team2_4, ou_team2_5, ou_team2_6):
+    predVGC = vgcIndPred([vgc_team1_1, vgc_team1_2, vgc_team1_3, vgc_team1_4, vgc_team1_5, vgc_team1_6],
+                         [vgc_team2_1, vgc_team2_2, vgc_team2_3, vgc_team2_4, vgc_team2_5, vgc_team2_6])
+    predOU = ouIndPred([ou_team1_1, ou_team1_2, ou_team1_3, ou_team1_4, ou_team1_5, ou_team1_6],
+                      [ou_team2_1, ou_team2_2, ou_team2_3, ou_team2_4, ou_team2_5, ou_team2_6])
+
+    return (f'{100*predVGC[0]:.1f}%', f'{100*predVGC[0]:.1f}%', f'{100*predOU[0]:.1f}%', f'{100*predOU[0]:.1f}%',
+            "assets/icons/" + vgc_team1_1 + ".png", "assets/icons/" + vgc_team1_2 + ".png", "assets/icons/" + vgc_team1_3 + ".png", "assets/icons/" + vgc_team1_4 + ".png", "assets/icons/" + vgc_team1_5 + ".png", "assets/icons/" + vgc_team1_6 + ".png",
+            "assets/icons/" + vgc_team2_1 + ".png", "assets/icons/" + vgc_team2_2 + ".png", "assets/icons/" + vgc_team2_3 + ".png", "assets/icons/" + vgc_team2_4 + ".png", "assets/icons/" + vgc_team2_5 + ".png", "assets/icons/" + vgc_team2_6 + ".png",
+            "assets/icons/" + ou_team1_1 + ".png", "assets/icons/" + ou_team1_2 + ".png", "assets/icons/" + ou_team1_3 + ".png", "assets/icons/" + ou_team1_4 + ".png", "assets/icons/" + ou_team1_5 + ".png", "assets/icons/" + ou_team1_6 + ".png",
+            "assets/icons/" + ou_team2_1 + ".png", "assets/icons/" + ou_team2_2 + ".png", "assets/icons/" + ou_team2_3 + ".png", "assets/icons/" + ou_team2_4 + ".png", "assets/icons/" + ou_team2_5 + ".png", "assets/icons/" + ou_team2_6 + ".png")
+
+vgcCol1 = dbc.Col([
+    dbc.Row([
+            html.Img(id='vgc_icon_team1_1',width="70"),
+            html.Img(id='vgc_icon_team1_2',width="70"),
+            html.Img(id='vgc_icon_team1_3',width="70"),
+            html.Img(id='vgc_icon_team1_4',width="70"),
+            html.Img(id='vgc_icon_team1_5',width="70"),
+            html.Img(id='vgc_icon_team1_6',width="70"),
+            ]),
+    dbc.Row([
+            dcc.Dropdown(
+                id='vgc_team1_1', 
+                options = vgcDrop, 
+                value = vgcPokes[0], 
+                className='mb-5', 
+            ),
+            dcc.Dropdown(
+                id='vgc_team1_2', 
+                options = vgcDrop, 
+                value = vgcPokes[1], 
+                className='mb-5', 
+            ),
+            dcc.Dropdown(
+                id='vgc_team1_3', 
+                options = vgcDrop, 
+                value = vgcPokes[2], 
+                className='mb-5', 
+            ),
+            dcc.Dropdown(
+                id='vgc_team1_4', 
+                options = vgcDrop, 
+                value = vgcPokes[3], 
+                className='mb-5', 
+            ),
+            dcc.Dropdown(
+                id='vgc_team1_5', 
+                options = vgcDrop, 
+                value = vgcPokes[4], 
+                className='mb-5', 
+            ),
+            dcc.Dropdown(
+                id='vgc_team1_6', 
+                options = vgcDrop, 
+                value = vgcPokes[5], 
+                className='mb-5', 
+            ),
+        ]),
+])
+
+vgcCol2 = dbc.Col([
+    dbc.Row([
+            html.Img(id='vgc_icon_team2_1',width="70"),
+            html.Img(id='vgc_icon_team2_2',width="70"),
+            html.Img(id='vgc_icon_team2_3',width="70"),
+            html.Img(id='vgc_icon_team2_4',width="70"),
+            html.Img(id='vgc_icon_team2_5',width="70"),
+            html.Img(id='vgc_icon_team2_6',width="70"),
+            ]),
+
+    dbc.Row([
+            dcc.Dropdown(
+                id='vgc_team2_1', 
+                options = vgcDrop, 
+                value = vgcPokes[0], 
+                className='mb-5', 
+            ),
+            dcc.Dropdown(
+                id='vgc_team2_2', 
+                options = vgcDrop, 
+                value = vgcPokes[1], 
+                className='mb-5', 
+            ),
+            dcc.Dropdown(
+                id='vgc_team2_3', 
+                options = vgcDrop, 
+                value = vgcPokes[2], 
+                className='mb-5', 
+            ),
+            dcc.Dropdown(
+                id='vgc_team2_4', 
+                options = vgcDrop, 
+                value = vgcPokes[3], 
+                className='mb-5', 
+            ),
+            dcc.Dropdown(
+                id='vgc_team2_5', 
+                options = vgcDrop, 
+                value = vgcPokes[4], 
+                className='mb-5', 
+            ),
+            dcc.Dropdown(
+                id='vgc_team2_6', 
+                options = vgcDrop, 
+                value = vgcPokes[5], 
+                className='mb-5', 
+            ),
+        ]),
+])
+
+ouCol1 = dbc.Col([
+        dbc.Row([
+            html.Img(id='ou_icon_team1_1',width="70"),
+            html.Img(id='ou_icon_team1_2',width="70"),
+            html.Img(id='ou_icon_team1_3',width="70"),
+            html.Img(id='ou_icon_team1_4',width="70"),
+            html.Img(id='ou_icon_team1_5',width="70"),
+            html.Img(id='ou_icon_team1_6',width="70"),
+            ]),
+
+        dbc.Row([
+            dcc.Dropdown(
+                id='ou_team1_1', 
+                options = ouDrop, 
+                value = ouPokes[0], 
+                className='mb-5', 
+            ),
+            
+            dcc.Dropdown(
+                id='ou_team1_2', 
+                options = ouDrop, 
+                value = ouPokes[1], 
+                className='mb-5', 
+            ),
+            
+            dcc.Dropdown(
+                id='ou_team1_3', 
+                options = ouDrop, 
+                value = ouPokes[2], 
+                className='mb-5', 
+            ),
+            
+            dcc.Dropdown(
+                id='ou_team1_4', 
+                options = ouDrop, 
+                value = ouPokes[3], 
+                className='mb-5', 
+            ),
+            
+            dcc.Dropdown(
+                id='ou_team1_5', 
+                options = ouDrop, 
+                value = ouPokes[4], 
+                className='mb-5', 
+            ),
+            
+            dcc.Dropdown(
+                id='ou_team1_6', 
+                options = ouDrop, 
+                value = ouPokes[5], 
+                className='mb-5', 
+            ),
+        ]),
+])
+
+ouCol2 = dbc.Col([
+    dbc.Row([
+            html.Img(id='ou_icon_team2_1',width="70"),
+            html.Img(id='ou_icon_team2_2',width="70"),
+            html.Img(id='ou_icon_team2_3',width="70"),
+            html.Img(id='ou_icon_team2_4',width="70"),
+            html.Img(id='ou_icon_team2_5',width="70"),
+            html.Img(id='ou_icon_team2_6',width="70"),
+            ]),
+
+        dbc.Row([
+            dcc.Dropdown(
+                id='ou_team2_1', 
+                options = ouDrop, 
+                value = ouPokes[0], 
+                className='mb-5', 
+            ),
+            dcc.Dropdown(
+                id='ou_team2_2', 
+                options = ouDrop, 
+                value = ouPokes[1], 
+                className='mb-5', 
+            ),
+            dcc.Dropdown(
+                id='ou_team2_3', 
+                options = ouDrop, 
+                value = ouPokes[2], 
+                className='mb-5', 
+            ),
+            dcc.Dropdown(
+                id='ou_team2_4', 
+                options = ouDrop, 
+                value = ouPokes[3], 
+                className='mb-5', 
+            ),
+            dcc.Dropdown(
+                id='ou_team2_5', 
+                options = ouDrop, 
+                value = ouPokes[4], 
+                className='mb-5', 
+            ),
+            dcc.Dropdown(
+                id='ou_team2_6', 
+                options = ouDrop, 
+                value = ouPokes[5], 
+                className='mb-5', 
+            ),
+        ])
+])
+
+vgcCol = dbc.Col([
+    dcc.Markdown(
+            """
+        
+            # VGC Ultra Sun and Moon Predictor
+
+            """
+        ),
+
+    dbc.Row([
         dcc.Markdown(
             """
         
-            ## Predictions
-
+            ## Team 1
 
             """
         ),
@@ -160,12 +411,76 @@ column1 = dbc.Col(
         dcc.Markdown(
             """
         
-            ## Interactions go here
-
+            ## VS
 
             """
         ),
 
+        dcc.Markdown(
+            """
+        
+            ## Team 2
+
+            """
+        ),
+    ]),
+
+    dbc.Row([
+        vgcCol1,
+        vgcCol2
+    ]),
+
+    dbc.Row([html.Div(id='team-1-percent-vgc', className='lead')]),
+])
+
+ouCol = dbc.Col([
+    dcc.Markdown(
+            """
+        
+            # OU Predictor
+
+            """
+        ),
+    dbc.Row([
+        dcc.Markdown(
+            """
+        
+            ## Team 1
+
+            """
+        ),
+
+        dcc.Markdown(
+            """
+        
+            ## VS
+
+            """
+        ),
+
+        dcc.Markdown(
+            """
+        
+            ## Team 2
+
+            """
+        ),
+    ]),
+
+    
+    dbc.Row([
+        ouCol1,
+        ouCol2
+    ]),
+    
+    dbc.Col(
+            [
+                html.Div(id='team-1-percent-ou', className='lead')
+            ]
+        ),
+])
+  
+desCol = dbc.Col([
         dcc.Markdown(
             """
         
@@ -174,8 +489,6 @@ column1 = dbc.Col(
 
             """
         ),
-    ]
-)
+    ])
 
-
-layout = dbc.Row([column1])
+layout = dbc.Col([vgcCol, ouCol, desCol])
