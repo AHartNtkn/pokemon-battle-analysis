@@ -11,7 +11,7 @@ column1 = dbc.Col(
         dcc.Markdown(
             """
         
-            ## Process
+            ## Data and Model
 
             The initial dataset used for training contains several thousand pokemon battles pulled from Pokémon Showdown. It only conatins the Pokémon on each team, along with the winner.
 
@@ -115,7 +115,7 @@ column1 = dbc.Col(
             Export["ou_hot.csv", newData]
             ```
 
-            At this point I'll move into Python and train a model. At the start the data is imported and split into training and validation sets.
+            I'll now move into Python and train a model. At the start the data is imported and split into training and validation sets.
 
             ```python
             oudf = pd.read_csv("ou_hot.csv")
