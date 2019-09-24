@@ -196,7 +196,7 @@ column1 = dbc.Col(
             ```
 
             ```
-            > 0.6034639927073838
+            > 0.6089334548769371
             ```
             
             All this brings our accuracy to around 60%, which is about as much as can be hoped for without more detailed information.
