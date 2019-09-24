@@ -9,7 +9,7 @@ import numpy as np
 
 from app import app
 
-# Loat models
+# Load models
 from joblib import load
 ouModel = load('assets/ouModel.joblib')
 vgcModel = load('assets/vgcModel.joblib')
@@ -76,17 +76,15 @@ def makeIndPred(setup, k, model):
     df = pd.DataFrame([setup])
     dfS = switchTeamsPd(df, k)
     predProbs = combineProbs(model.predict_proba(df), model.predict_proba(dfS))
-    pred = [ "team_1" if x[0] > .5 else "team_2" for x in predProbs ]
-    return (pred[0], predProbs[0,0], predProbs[0,1])
+    return predProbs[0]
 
 # Calculate the stats for a row based on a team
 def teamToStatsRow(team1, team2):
     pokeDataT = pokeData.T
     
-    types = ["None", "Normal", "Fighting", 
-         "Flying", "Poison", "Ground", "Rock", "Bug", "Ghost", "Steel", 
-         "Fire", "Water", "Grass", "Electric", "Psychic", "Ice", "Dragon",
-          "Dark", "Fairy"]
+    types = ["None", "Normal", "Fighting",  "Flying", "Poison", "Ground",
+             "Rock", "Bug", "Ghost", "Steel",  "Fire", "Water", "Grass",
+             "Electric", "Psychic", "Ice", "Dragon", "Dark", "Fairy"]
     team1TypesP = np.array(list(map(lambda x: pokeDataT[x],team1)))[:,8:10].flatten()
     team2TypesP = np.array(list(map(lambda x: pokeDataT[x],team2)))[:,8:10].flatten()
     team1Types = [list(team1TypesP).count(t) for t in types]
@@ -129,7 +127,7 @@ def fullTeamRow(team1, team2, pokeList, index):
     return pd.Series([ x in team1 for x in pokeList ] + [ x in team2 for x in pokeList ] + teamToStatsRow(team1, team2),
                      index=index)
 
-# The number of pokemon apearing in each dataset, times 2 (for each team)
+# The number of pokemon appearing in each dataset, times 2 (1 for each team)
 vgcSunk = 788
 ouk = 1108
 # Get the indices for each dataset
