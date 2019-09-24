@@ -180,7 +180,8 @@ def multi_output(vgc_team1_1, vgc_team1_2, vgc_team1_3, vgc_team1_4, vgc_team1_5
     predOU = ouIndPred([ou_team1_1, ou_team1_2, ou_team1_3, ou_team1_4, ou_team1_5, ou_team1_6],
                       [ou_team2_1, ou_team2_2, ou_team2_3, ou_team2_4, ou_team2_5, ou_team2_6])
 
-    return (f'{100*predVGC[0]:.1f}%', f'{100*predVGC[0]:.1f}%', f'{100*predOU[0]:.1f}%', f'{100*predOU[0]:.1f}%',
+    return (f'Team 1 Chance at winning: {100*predVGC[0]:.1f}%', f'Team 2 Chance at winning: {100*predVGC[1]:.1f}%',
+            f'Team 1 Chance at winning: {100*predOU[0]:.1f}%', f'Team 2 Chance at winning: {100*predOU[1]:.1f}%',
             "assets/icons/" + vgc_team1_1 + ".png", "assets/icons/" + vgc_team1_2 + ".png", "assets/icons/" + vgc_team1_3 + ".png", "assets/icons/" + vgc_team1_4 + ".png", "assets/icons/" + vgc_team1_5 + ".png", "assets/icons/" + vgc_team1_6 + ".png",
             "assets/icons/" + vgc_team2_1 + ".png", "assets/icons/" + vgc_team2_2 + ".png", "assets/icons/" + vgc_team2_3 + ".png", "assets/icons/" + vgc_team2_4 + ".png", "assets/icons/" + vgc_team2_5 + ".png", "assets/icons/" + vgc_team2_6 + ".png",
             "assets/icons/" + ou_team1_1 + ".png", "assets/icons/" + ou_team1_2 + ".png", "assets/icons/" + ou_team1_3 + ".png", "assets/icons/" + ou_team1_4 + ".png", "assets/icons/" + ou_team1_5 + ".png", "assets/icons/" + ou_team1_6 + ".png",
@@ -188,12 +189,12 @@ def multi_output(vgc_team1_1, vgc_team1_2, vgc_team1_3, vgc_team1_4, vgc_team1_5
 
 vgcCol1 = dbc.Col([
     dbc.Row([
-            html.Img(id='vgc_icon_team1_1',width="70"),
-            html.Img(id='vgc_icon_team1_2',width="70"),
-            html.Img(id='vgc_icon_team1_3',width="70"),
-            html.Img(id='vgc_icon_team1_4',width="70"),
-            html.Img(id='vgc_icon_team1_5',width="70"),
-            html.Img(id='vgc_icon_team1_6',width="70"),
+            html.Img(id='vgc_icon_team1_1',width="75"),
+            html.Img(id='vgc_icon_team1_2',width="75"),
+            html.Img(id='vgc_icon_team1_3',width="75"),
+            html.Img(id='vgc_icon_team1_4',width="75"),
+            html.Img(id='vgc_icon_team1_5',width="75"),
+            html.Img(id='vgc_icon_team1_6',width="75"),
             ]),
     dbc.Row([
             dcc.Dropdown(
@@ -201,48 +202,54 @@ vgcCol1 = dbc.Col([
                 options = vgcDrop, 
                 value = vgcPokes[0], 
                 className='mb-5', 
+                style={ 'width': '75px',  "font-size": "10px"}
             ),
             dcc.Dropdown(
                 id='vgc_team1_2', 
                 options = vgcDrop, 
                 value = vgcPokes[1], 
                 className='mb-5', 
+                style={ 'width': '75px',  "font-size": "10px"}
             ),
             dcc.Dropdown(
                 id='vgc_team1_3', 
                 options = vgcDrop, 
                 value = vgcPokes[2], 
                 className='mb-5', 
+                style={ 'width': '75px',  "font-size": "10px"}
             ),
             dcc.Dropdown(
                 id='vgc_team1_4', 
                 options = vgcDrop, 
                 value = vgcPokes[3], 
                 className='mb-5', 
+                style={ 'width': '75px',  "font-size": "10px"}
             ),
             dcc.Dropdown(
                 id='vgc_team1_5', 
                 options = vgcDrop, 
                 value = vgcPokes[4], 
                 className='mb-5', 
+                style={ 'width': '75px',  "font-size": "10px"}
             ),
             dcc.Dropdown(
                 id='vgc_team1_6', 
                 options = vgcDrop, 
                 value = vgcPokes[5], 
                 className='mb-5', 
+                style={ 'width': '75px',  "font-size": "10px"}
             ),
         ]),
 ])
 
 vgcCol2 = dbc.Col([
     dbc.Row([
-            html.Img(id='vgc_icon_team2_1',width="70"),
-            html.Img(id='vgc_icon_team2_2',width="70"),
-            html.Img(id='vgc_icon_team2_3',width="70"),
-            html.Img(id='vgc_icon_team2_4',width="70"),
-            html.Img(id='vgc_icon_team2_5',width="70"),
-            html.Img(id='vgc_icon_team2_6',width="70"),
+            html.Img(id='vgc_icon_team2_1',width="75"),
+            html.Img(id='vgc_icon_team2_2',width="75"),
+            html.Img(id='vgc_icon_team2_3',width="75"),
+            html.Img(id='vgc_icon_team2_4',width="75"),
+            html.Img(id='vgc_icon_team2_5',width="75"),
+            html.Img(id='vgc_icon_team2_6',width="75"),
             ]),
 
     dbc.Row([
@@ -251,48 +258,54 @@ vgcCol2 = dbc.Col([
                 options = vgcDrop, 
                 value = vgcPokes[0], 
                 className='mb-5', 
+                style={ 'width': '75px',  "font-size": "10px"}
             ),
             dcc.Dropdown(
                 id='vgc_team2_2', 
                 options = vgcDrop, 
                 value = vgcPokes[1], 
                 className='mb-5', 
+                style={ 'width': '75px',  "font-size": "10px"}
             ),
             dcc.Dropdown(
                 id='vgc_team2_3', 
                 options = vgcDrop, 
                 value = vgcPokes[2], 
                 className='mb-5', 
+                style={ 'width': '75px',  "font-size": "10px"}
             ),
             dcc.Dropdown(
                 id='vgc_team2_4', 
                 options = vgcDrop, 
                 value = vgcPokes[3], 
                 className='mb-5', 
+                style={ 'width': '75px',  "font-size": "10px"}
             ),
             dcc.Dropdown(
                 id='vgc_team2_5', 
                 options = vgcDrop, 
                 value = vgcPokes[4], 
                 className='mb-5', 
+                style={ 'width': '75px',  "font-size": "10px"}
             ),
             dcc.Dropdown(
                 id='vgc_team2_6', 
                 options = vgcDrop, 
                 value = vgcPokes[5], 
                 className='mb-5', 
+                style={ 'width': '75px',  "font-size": "10px"}
             ),
         ]),
 ])
 
 ouCol1 = dbc.Col([
         dbc.Row([
-            html.Img(id='ou_icon_team1_1',width="70"),
-            html.Img(id='ou_icon_team1_2',width="70"),
-            html.Img(id='ou_icon_team1_3',width="70"),
-            html.Img(id='ou_icon_team1_4',width="70"),
-            html.Img(id='ou_icon_team1_5',width="70"),
-            html.Img(id='ou_icon_team1_6',width="70"),
+            html.Img(id='ou_icon_team1_1',width="75"),
+            html.Img(id='ou_icon_team1_2',width="75"),
+            html.Img(id='ou_icon_team1_3',width="75"),
+            html.Img(id='ou_icon_team1_4',width="75"),
+            html.Img(id='ou_icon_team1_5',width="75"),
+            html.Img(id='ou_icon_team1_6',width="75"),
             ]),
 
         dbc.Row([
@@ -301,6 +314,7 @@ ouCol1 = dbc.Col([
                 options = ouDrop, 
                 value = ouPokes[0], 
                 className='mb-5', 
+                style={ 'width': '75px',  "font-size": "10px"}
             ),
             
             dcc.Dropdown(
@@ -308,6 +322,7 @@ ouCol1 = dbc.Col([
                 options = ouDrop, 
                 value = ouPokes[1], 
                 className='mb-5', 
+                style={ 'width': '75px',  "font-size": "10px"}
             ),
             
             dcc.Dropdown(
@@ -315,6 +330,7 @@ ouCol1 = dbc.Col([
                 options = ouDrop, 
                 value = ouPokes[2], 
                 className='mb-5', 
+                style={ 'width': '75px',  "font-size": "10px"}
             ),
             
             dcc.Dropdown(
@@ -322,6 +338,7 @@ ouCol1 = dbc.Col([
                 options = ouDrop, 
                 value = ouPokes[3], 
                 className='mb-5', 
+                style={ 'width': '75px',  "font-size": "10px"}
             ),
             
             dcc.Dropdown(
@@ -329,6 +346,7 @@ ouCol1 = dbc.Col([
                 options = ouDrop, 
                 value = ouPokes[4], 
                 className='mb-5', 
+                style={ 'width': '75px',  "font-size": "10px"}
             ),
             
             dcc.Dropdown(
@@ -336,18 +354,19 @@ ouCol1 = dbc.Col([
                 options = ouDrop, 
                 value = ouPokes[5], 
                 className='mb-5', 
+                style={ 'width': '75px',  "font-size": "10px"}
             ),
         ]),
 ])
 
 ouCol2 = dbc.Col([
     dbc.Row([
-            html.Img(id='ou_icon_team2_1',width="70"),
-            html.Img(id='ou_icon_team2_2',width="70"),
-            html.Img(id='ou_icon_team2_3',width="70"),
-            html.Img(id='ou_icon_team2_4',width="70"),
-            html.Img(id='ou_icon_team2_5',width="70"),
-            html.Img(id='ou_icon_team2_6',width="70"),
+            html.Img(id='ou_icon_team2_1',width="75"),
+            html.Img(id='ou_icon_team2_2',width="75"),
+            html.Img(id='ou_icon_team2_3',width="75"),
+            html.Img(id='ou_icon_team2_4',width="75"),
+            html.Img(id='ou_icon_team2_5',width="75"),
+            html.Img(id='ou_icon_team2_6',width="75"),
             ]),
 
         dbc.Row([
@@ -356,36 +375,42 @@ ouCol2 = dbc.Col([
                 options = ouDrop, 
                 value = ouPokes[0], 
                 className='mb-5', 
+                style={  'width': '75px', "font-size": "10px"}
             ),
             dcc.Dropdown(
                 id='ou_team2_2', 
                 options = ouDrop, 
                 value = ouPokes[1], 
                 className='mb-5', 
+                style={ 'width': '75px',  "font-size": "10px"}
             ),
             dcc.Dropdown(
                 id='ou_team2_3', 
                 options = ouDrop, 
                 value = ouPokes[2], 
                 className='mb-5', 
+                style={ 'width': '75px',  "font-size": "10px"}
             ),
             dcc.Dropdown(
                 id='ou_team2_4', 
                 options = ouDrop, 
                 value = ouPokes[3], 
                 className='mb-5', 
+                style={ 'width': '75px',  "font-size": "10px"}
             ),
             dcc.Dropdown(
                 id='ou_team2_5', 
                 options = ouDrop, 
                 value = ouPokes[4], 
                 className='mb-5', 
+                style={ 'width': '75px',  "font-size": "10px"}
             ),
             dcc.Dropdown(
                 id='ou_team2_6', 
                 options = ouDrop, 
                 value = ouPokes[5], 
                 className='mb-5', 
+                style={ 'width': '75px',  "font-size": "10px"}
             ),
         ])
 ])
@@ -400,29 +425,13 @@ vgcCol = dbc.Col([
         ),
 
     dbc.Row([
-        dcc.Markdown(
-            """
-        
-            ## Team 1
+        dbc.Col([
+            html.H2("Team 1")
+        ]),
 
-            """
-        ),
-
-        dcc.Markdown(
-            """
-        
-            ## VS
-
-            """
-        ),
-
-        dcc.Markdown(
-            """
-        
-            ## Team 2
-
-            """
-        ),
+        dbc.Col([
+            html.H2("Team 2")
+        ]),
     ]),
 
     dbc.Row([
@@ -430,7 +439,15 @@ vgcCol = dbc.Col([
         vgcCol2
     ]),
 
-    dbc.Row([html.Div(id='team-1-percent-vgc', className='lead')]),
+    dbc.Row([
+        dbc.Col([
+            html.Div(id='team-1-percent-vgc', className='lead')
+        ]),
+
+        dbc.Col([
+            html.Div(id='team-2-percent-vgc', className='lead')
+        ]),
+    ]),
 ])
 
 ouCol = dbc.Col([
@@ -442,29 +459,13 @@ ouCol = dbc.Col([
             """
         ),
     dbc.Row([
-        dcc.Markdown(
-            """
-        
-            ## Team 1
+        dbc.Col([
+            html.H2("Team 1")
+        ]),
 
-            """
-        ),
-
-        dcc.Markdown(
-            """
-        
-            ## VS
-
-            """
-        ),
-
-        dcc.Markdown(
-            """
-        
-            ## Team 2
-
-            """
-        ),
+        dbc.Col([
+            html.H2("Team 2")
+        ]),
     ]),
 
     
@@ -473,11 +474,15 @@ ouCol = dbc.Col([
         ouCol2
     ]),
     
-    dbc.Col(
-            [
-                html.Div(id='team-1-percent-ou', className='lead')
-            ]
-        ),
+    dbc.Row([
+        dbc.Col([
+            html.Div(id='team-1-percent-ou', className='lead')
+        ]),
+
+        dbc.Col([
+            html.Div(id='team-2-percent-ou', className='lead')
+        ]),
+    ]),
 ])
   
 desCol = dbc.Col([
@@ -491,4 +496,4 @@ desCol = dbc.Col([
         ),
     ])
 
-layout = dbc.Col([vgcCol, ouCol, desCol])
+layout = dbc.Col([vgcCol, html.Hr(), ouCol, html.Hr(), desCol])
