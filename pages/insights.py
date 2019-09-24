@@ -11,7 +11,7 @@ column1 = dbc.Col(
         dcc.Markdown(
             """
         
-            ## Insights
+            ## Insights and Limitations
 
 
             """
