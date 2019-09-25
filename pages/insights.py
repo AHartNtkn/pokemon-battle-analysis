@@ -25,7 +25,7 @@ column1 = dbc.Col(
         
             Most of the most important features are engineered ones, specifically stat mean and standard deviations. This is, perhaps, not too surprising, as it is the most generic way of summarizing a team's contents, in the abstract. Of less importance are the type-related features. The exact types of the Pokemon matter a lot less than how defensive a team is against another type. Among those, the exact important ones depend on the league. In OU, having good Fighting defense or Dragon immunity matters a lot more, while Ground and Fairy defense tends to matter more for VGC Sun and Moon. Good Steel defense matters in both.
             
-            It's relatively rare for a single Pokemon species to have a dramatic impact on outcomes, but a few do come up. We see Tapu Fini in the list above. The most influential Pokemon tend to be legendaries; the various Tapus, Yveltal, Kyogre and Groudon, Ho-oh and Lugia along with Ultra Beasts, and a handful of others. A smaller number of non-legendary Pokemon also end of making a big impact. These include Toxapex, Garchomp, Lurantis, Incineroar, and a handful of others. 
+            It's relatively rare for a single Pokemon species to have a dramatic impact on outcomes, but a few do come up. We see Tapu Fini in the list above. The most influential Pokemon tend to be legendaries; the various Tapus, Yveltal, Kyogre and Groudon, Ho-oh and Lugia along with Ultra Beasts, and a handful of others. A smaller number of non-legendary Pokemon also end of making a big impact. These include Toxapex, Garchomp, Lurantis, Incineroar, Tyranitar, Snorlax, and a handful of others. 
 
             """
         ),
