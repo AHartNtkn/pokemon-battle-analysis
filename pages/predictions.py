@@ -489,8 +489,11 @@ desCol = dbc.Col([
         dcc.Markdown(
             """
         
-            Description goes here.
+            For this project, two models were trained. One on a series of battles using VGC Ultra Sun and Moon legal pokemon, and the other using OU tier legal pokemon.
 
+            Simply select which pokemon you want, and the model will calculate a percent chance of each team winning. Note that the results become less reliable the more exotic (relative to the dataset) your teams are.
+
+            Generally, this can be used as a baseline to assess whether one team has a default advantage over another. In most cases, the advantage is only slight. Between two reasonably constructed teams, there's typically a reasonable chance that either could win. Sometimes the model can see if a battle is one-sided, however.
 
             """
         ),
