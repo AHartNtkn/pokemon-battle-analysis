@@ -33,19 +33,18 @@ column1 = dbc.Col(
 
             This application allows one to interactively compare how well one team of Pokémon performs against another. This may provide some guidance in team building, and the techniques used to create the model used in this app can be applied to similar games, such as card games.
             """
-        )
+        ),
+        
+        dcc.Link(dbc.Button('Predict Some Battles!', color='primary'), href='/predictions')
     ],
     md=4,
 )
 
-gapminder = px.data.gapminder()
-fig = px.scatter(gapminder.query("year==2007"), x="gdpPercap", y="lifeExp", size="pop", color="continent",
-           hover_name="country", log_x=True, size_max=60)
-
 column2 = dbc.Col(
     [
-        dcc.Graph(figure=fig),
-    ]
+        html.Img(src="assets/PokemonSunMoonAmazonJapan4.jpg"),
+    ],
+    md=4,
 )
 
 layout = dbc.Row([column1, column2])

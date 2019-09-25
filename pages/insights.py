@@ -18,7 +18,9 @@ column1 = dbc.Col(
             """
         ),
 
-        html.Img(src="assets/perm_importance.png"),
+        html.Div([
+            html.Img(src="assets/perm_importance.png")],
+            style={"textAlign": "center"}),
 
         dcc.Markdown(
             """
@@ -41,8 +43,7 @@ column1 = dbc.Col(
 
             """
         ),
-    ],
-    md=4,
+    ]
 )
 
 layout = dbc.Row([column1])
