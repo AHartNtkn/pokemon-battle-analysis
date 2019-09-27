@@ -27,7 +27,7 @@ column1 = dbc.Col(
         
             Most of the most important features are engineered ones, specifically stat mean and standard deviations. This is, perhaps, not too surprising, as it is the most generic way of summarizing a team's contents, in the abstract. Of less importance are the type-related features. The exact types of the Pokémon matter a lot less than how defensive a team is against another type. Among those, the exact important ones depend on the league. In OU, having good Fighting defense or Dragon immunity matters a lot more, while Ground and Fairy defense tends to matter more for VGC Sun and Moon. Good Steel defense matters in both.
             
-            It's relatively rare for a single Pokémon species to have a dramatic impact on outcomes, but a few do come up. We see Tapu Fini in the list above. The most influential Pokémon tend to be legendaries; the various Tapus, Yveltal, Kyogre and Groudon, Ho-oh and Lugia along with Ultra Beasts, and a handful of others. A smaller number of non-legendary Pokémon also end of making a big impact. These include Toxapex, Garchomp, Lurantis, Incineroar, Tyranitar, Snorlax, and a handful of others. 
+            It's relatively rare for a single Pokémon species to have a dramatic impact on outcomes, but a few do come up. We see Tapu Fini in the list above. The most influential Pokémon tend to be legendaries; the various Tapus, Yveltal, Kyogre and Groudon, Ho-oh and Lugia along with Ultra Beasts, and a handful of others. A smaller number of non-legendary Pokémon also end up making a big impact. These include Toxapex, Garchomp, Lurantis, Incineroar, Tyranitar, Snorlax, and a handful of others. 
 
             """
         ),
@@ -39,7 +39,7 @@ column1 = dbc.Col(
 
             Most limitations of the model stem from the dataset itself. Initially, it only contained the Pokémon on each team, along with the winner. From this, many team metrics can be generated, but this has its limits. The dataset doesn't contain information which is often essential for inferring the strategy underlying a teams construction. For example, it doesn't mention held items, moves, effort values, or special abilities. Each Pokémon comes in a multitude of variations which can dramatically effect the outcome of a battle.
             
-            Perhaps even more import than the lack of information on individual Pokémon is the lack of information on the battlers. Having some kind of proxy for skill, such as some kind of Elo rating, would likely help improve accuracy more than any other individual metric. More speculatively, one might be able to render a short description of a team strategy into a vector using NLP, which might help improve accuracy.
+            Perhaps of even more import than the lack of information on individual Pokémon is the lack of information on the battlers. Having some kind of proxy for skill, such as some kind of Elo rating or global ranking, would likely help improve accuracy more than any other individual metric. More speculatively, one might be able to render a short description of a team strategy into a vector using NLP which could improve accuracy.
 
             """
         ),

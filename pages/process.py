@@ -94,7 +94,7 @@ column1 = dbc.Col(
             Export["ou.csv", dataOU]
             ```
 
-            There are also a lot of symmetries in Pokémon battles. The order of a team doesn't really matter. Which Pokémon is first does matter a little, but it's more helpful to ignore team order altogether. The easiest way to implement this is a on-hot encoding of the teams.
+            There are also a lot of symmetries in Pokémon battles. The order of a team doesn't really matter. Which Pokémon is first does matter a little, but it's more helpful to ignore team order altogether. The easiest way to implement this is a one-hot encoding of the teams.
 
             ```mathematica
             (*Function for 1-hot encoding pokemon*)
